@@ -31,14 +31,14 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: pastebin
         IMAGE_TAG: ${{ github.sha }}
-        SECRETKEY: ${{ secret.SECRETKEY }}
-        DJANGOSETTINGSMODULE: ${{ secret.DJANGOSETTINGSMODULE }}
-        DJANGO_WSGI_SETTINGS_MODULE: ${{ secret.DJANGO_WSGI_SETTINGS_MODULE }}
-        DB_NAME: ${{ secret.DB_NAME }}
-        DB_USER: ${{ secret.DB_USER }}
-        DB_HOST: ${{ secret.DB_HOST }}
-        DB_POST: ${{ secret.DB_POST }}
-        DB_SECRET_KEY: ${{ secret.DB_SECRET_KEY }}
+        SECRETKEY: ${{ secrets.SECRETKEY }}
+        DJANGOSETTINGSMODULE: ${{ secrets.DJANGOSETTINGSMODULE }}
+        DJANGO_WSGI_SETTINGS_MODULE: ${{ secrets.DJANGO_WSGI_SETTINGS_MODULE }}
+        DB_NAME: ${{ secrets.DB_NAME }}
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_POST: ${{ secrets.DB_POST }}
+        DB_SECRET_KEY: ${{ secrets.DB_SECRET_KEY }}
       run: |
         # Build a docker container and
         # push it to ECR so that it can
