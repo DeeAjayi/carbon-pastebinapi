@@ -37,7 +37,7 @@ jobs:
         DB_NAME: ${{ secrets.DB_NAME }}
         DB_USER: ${{ secrets.DB_USER }}
         DB_HOST: ${{ secrets.DB_HOST }}
-        DB_POST: ${{ secrets.DB_POST }}
+        DB_POST: ${{ secrets.DB_PORT }}
         DB_SECRET_KEY: ${{ secrets.DB_SECRET_KEY }}
       run: |
         # Build a docker container and
@@ -61,7 +61,7 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: task_definition.json
+        task-definition: infrastructure/task_definition.json
         container-name: pastebin
         image: ${{ steps.build-image.outputs.image }}
 
