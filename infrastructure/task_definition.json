@@ -1,0 +1,15 @@
+[
+  {
+    "portMappings": [
+        {
+            "hostPort": 80,
+            "protocol": "tcp",
+            "containerPort": 80
+        }
+    ],
+    "cpu": 1,
+    "memory": 512,
+    "image": "nginx:latest",
+    "name": "pastebin"
+  }
+]
