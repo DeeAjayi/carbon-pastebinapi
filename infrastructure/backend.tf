@@ -6,6 +6,5 @@ terraform {
     encrypt = true
     dynamodb_table = "tf-backend-lock-table"
     region = "us-east-1"
-    profile = "dipo"
   }
 }
