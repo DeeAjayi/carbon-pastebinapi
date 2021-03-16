@@ -45,14 +45,14 @@ jobs:
         # be deployed to ECS.
         docker build \
         -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG \
-        --build-arg $SECRETKEY \
-        --build-arg $DJANGOSETTINGSMODULE \
-        --build-arg $DJANGO_WSGI_SETTINGS_MODULE \
-        --build-arg $DB_NAME \
-        --build-arg $DB_USER \
-        --build-arg $DB_HOST \
-        --build-arg $DB_POST \
-        --build-arg $DB_SECRET_KEY \
+        --build-arg SECRETKEY \
+        --build-arg DJANGOSETTINGSMODULE \
+        --build-arg DJANGO_WSGI_SETTINGS_MODULE \
+        --build-arg DB_NAME \
+        --build-arg DB_USER \
+        --build-arg DB_HOST \
+        --build-arg DB_POST \
+        --build-arg DB_SECRET_KEY \
         -f prod.Dockerfile .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
